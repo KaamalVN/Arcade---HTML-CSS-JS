@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Escape Room</title>
+        <style>
+            .popup {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 400px;
+                height: 200px;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>There are keys hidden in this image, find all keys to unlock the door!</h1>
+        <h3>Rules:</h3>
+        <ol>
+            <li>If you find the place where the key is hidden, you will be asked some riddles.</li>
+            <li>Solve the riddles to acquire the keys.</li>
+            <li>Collect all six keys to unlock the door.</li>
+        </ol>
+        <img src="escape_room.png" usemap="#mapper">
+        <div id="popup1" class="popup">
+            <h2>Question 1</h2>
+            <p>What is the capital of France?</p>
+            <input type="text" id="answer1">
+            <button onclick="checkAnswer('answer1', 'popup1')">Submit</button>
+        </div>
+        <div id="popup2" class="popup">
+            <h2>Question 2</h2>
+            <p>What is the largest planet in our solar system?</p>
+            <input type="text" id="answer2">
+            <button onclick="checkAnswer('answer2', 'popup2')">Submit</button>
+        </div>
+        <div id="popup3" class="popup">
+            <h2>Question 3</h2>
+            <p>What is the chemical symbol for gold?</p>
+            <input type="text" id="answer3">
+            <button onclick="checkAnswer('answer3', 'popup3')">Submit</button>
+        </div>
+        <div id="popup4" class="popup">
+            <h2>Question 4</h2>
+            <p>What is the name of the first man to walk on the moon?</p>
+            <input type="text" id="answer4">
+            <button onclick="checkAnswer('answer4', 'popup4')">Submit</button>
+        </div>
+        <div id="popup5" class="popup">
+            <h2>Question 5</h2>
+            <p>What is the largest mammal in the world?</p>
+            <input type="text" id="answer5">
+            <button onclick="checkAnswer('answer5', 'popup5')">Submit</button>
+        </div>
+        <div id="popup6" class="popup">
+            <h2>Question 6</h2>
+            <p>What is the currency of Japan?</p>
+            <input type="text" id="answer6">
+            <button onclick="checkAnswer('answer6', 'popup6')">Submit</button>
+        </div>
+        <map name="mapper">
+            <area shape="rect" coords="983,300,1199,447" id="monitor" onclick="showPopup('popup1')">
+            <area shape="rect" coords="1717,555,1876,731" id="pipe" onclick="showPopup('popup2')">
+            <area shape="rect" coords="26,637,115,720" id="box" onclick="showPopup('popup3')">
+            <area shape="rect" coords="632,151,798,317" id="poster" onclick="showPopup('popup4')">
+            <area shape="rect" coords="1442,645,1503,723" id="ports" onclick="showPopup('popup5')">
+            <area shape="rect" coords="587,646,668,722" id="pot" onclick="showPopup('popup6')">
+        </map>
+        <script>
+            var score = 0;
+            function checkAnswer(answerId, popupId) {
+                var answer = document.getElementById(answerId).value.toLowerCase();
+                if (answer === 'paris' || answer === 'france') {
+                    score += 1;
+                    document.getElementById(popupId).style.display = "none";
+                } else if (answer === 'jupiter') {
+                    score += 1;
+                    document.getElementById(popupId).style.display = "none";
+                } else if (answer === 'au' || answer === 'gold') {
+                    score += 1;
+                    document.getElementById(popupId).style.display = "none";
+                } else if (answer === 'neil armstrong') {
+                    score += 1;
+                    document.getElementById(popupId).style.display = "none";
+                } else if (answer === 'blue whale') {
+                    score += 1;
+                    document.getElementById(popupId).style.display = "none";
+                } else if (answer === 'yen') {
+                    score += 1;
+                    document.getElementById(popupId).style.display = "none";
+                }
+                if (score === 6) {
+                    alert("Congratulations! You have found all six keys and unlocked the door!");
+                }
+            }
+            function showPopup(popupId) {
+                document.getElementById(popupId).style.display = "block";
+            }
+        </script>
+    </body>
+</html>

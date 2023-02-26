@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Escape Room</title>
+</head>
+<body>
+	<div id="questions">
+		<!-- These are the questions that will be displayed for the respective ID -->
+		<h2>Questions</h2>
+		<ol id="question-list">
+			<!-- The questions for the "monitor" ID -->
+			<li id="monitor-1" class="monitor">What is the name of the program running on the monitor?</li>
+			<li id="monitor-2" class="monitor">What is the password displayed on the monitor?</li>
+			
+			<!-- The questions for the "pipe" ID -->
+			<li id="pipe-1" class="pipe">What is the name of the creature hidden in the pipes?</li>
+			<li id="pipe-2" class="pipe">What is the color of the button on the pipe control panel?</li>
+			
+			<!-- The questions for the "box" ID -->
+			<li id="box-1" class="box">What is the combination to the lock on the box?</li>
+			<li id="box-2" class="box">What is the name of the object hidden inside the box?</li>
+			
+			<!-- The questions for the "poster" ID -->
+			<li id="poster-1" class="poster">What is the name of the movie poster?</li>
+			<li id="poster-2" class="poster">What is the release year of the movie?</li>
+			
+			<!-- The questions for the "ports" ID -->
+			<li id="ports-1" class="ports">What is the name of the program running on the computer?</li>
+			<li id="ports-2" class="ports">What is the IP address displayed on the screen?</li>
+			
+			<!-- The questions for the "pot" ID -->
+			<li id="pot-1" class="pot">What is the name of the plant inside the pot?</li>
+			<li id="pot-2" class="pot">What is the color of the flower on the plant?</li>
+		</ol>
+	</div>
+	
+	<script>
+		// Get the ID from the referring URL
+		var referrer = document.referrer;
+		var url = new URL(referrer);
+		var id = url.searchParams.get("id");
+		
+		// Filter the questions by the ID and show them
+		var questions = document.querySelectorAll(".question");
+		for (var i = 0; i < questions.length; i++) {
+			if (questions[i].classList.contains(id)) {
+				questions[i].style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>

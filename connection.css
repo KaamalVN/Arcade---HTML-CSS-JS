@@ -1,0 +1,72 @@
+body {
+    background-color: lightblue;
+    background-image: url("https://cdn.pixabay.com/photo/2021/06/02/18/04/education-6305113__340.jpg");
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  #question {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    color: white;
+  }
+  
+  #images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  img {
+    height: 200px;
+    margin: 10px;
+    border: 3px solid white;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  input[type="text"] {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 10px;
+  }
+  
+  button[type="submit"] {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #result {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    color: white;
+  }
+  
+  .incorrect {
+    color: red;
+  }
+  
+  .correct {
+    color: green;
+  }
+  
